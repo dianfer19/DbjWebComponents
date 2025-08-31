@@ -1,0 +1,15 @@
+:host {
+    --icon-size: 1em; /* hereda tamaño de fuente por defecto */
+    --icon-color: currentColor; /* hereda color del contexto */
+    display: inline-flex;
+    line-height: 0;
+}
+
+svg {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    color: var(--icon-color);
+    fill: currentColor; /* para íconos rellenos */
+    stroke: currentColor; /* para íconos con trazos */
+    display: block;
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html data-theme="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <title>Demo DBJ Buttons</title>
+    <script src="./dbj-btn01.js" type="module"></script>
+    <script src="./../../icons/dbj-icon.js" type="module"></script>
+    <style>
+        /* Ejemplo: override por instancia */
+        .custom-green {
+            --btn-bg: #064e3b;
+            --btn-fg: #a7f3d0;
+            --btn-glow: #34d399;
+            --btn-bg-hover-grad: linear-gradient(0deg, #34d399, #059669);
+        }
+    </style>
+</head>
+<body>
+<!-- 1) Texto por atributo -->
+<dbj-btn01 id="btn-generar" label="Generar"></dbj-btn01>
+
+<!--&lt;!&ndash; 2) Texto por slot + variant &ndash;&gt;-->
+<!--<dbj-btn01 variant="primary">Publicar</dbj-btn01>-->
+
+<!--&lt;!&ndash; 3) Colores por variables (scoped) &ndash;&gt;-->
+<!--<dbj-btn01 class="custom-green">Aprobar</dbj-btn01>-->
+
+<!-- 4) Icono personalizado por slot y texto por atributo -->
+<dbj-btn01 id="btn-descargar" label="Descargar">
+    <dbj-icon color="white" name="download" size="22" slot="icon"></dbj-icon>
+</dbj-btn01>
+<!--<dbj-btn01 label="Descargar">-->
+<!--    <dbj-icon color="red" name="sparkle" size="40" slot="icon"></dbj-icon>-->
+<!--</dbj-btn01>-->
+
+
+<script>
+    // Escuchar clics del componente
+    // document.querySelectorAll("dbj-btn01").forEach(btn => {
+    //     btn.addEventListener("dbj-click", () => console.log("click de", btn));
+    // });
+
+    document.getElementById("btn-generar")
+        .addEventListener("dbj-click", () => {
+            console.log("click de", "btn-generar");
+            alert("Button clicked!");
+        });
+    document.getElementById("btn-descargar")
+        .addEventListener("dbj-click", () => {
+            console.log("click de", "Deshabilitando el boton generar");
+            document.getElementById("btn-generar").disabled = true;
+        });
+    // Toggle de tema para ver el cambio por variables globales
+    setTimeout(() => {
+        document.documentElement.dataset.theme = "dark";
+    }, 3000);
+</script>
+</body>
+</html>

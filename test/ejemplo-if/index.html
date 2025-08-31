@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo CSS if()</title>
+    <style>
+        :root {
+            --scheme: light;   /* valores posibles: light | dark | very-dark */
+            --contrast: normal; /* valores posibles: normal | hi */
+        }
+
+        body {
+            font-family: system-ui, sans-serif;
+            padding: 2rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Caso 1: si --scheme es dark O very-dark → fondo negro */
+        body {
+            background-color: if(
+                    style((--scheme: dark) or (--scheme: very-dark)): black;
+            else: white
+        );
+            color: if(
+                    style((--scheme: dark) or (--scheme: very-dark)): white;
+            else: black
+        );
+        }
+
+        /* Caso 2: si --scheme es dark Y contraste alto → fondo rojo */
+        body {
+            background-color: if(
+                    style((--scheme: dark) and (--contrast: hi)): crimson;
+            else: inherit
+        );
+        }
+
+        /* Caso 3: si NO es light → fondo gris oscuro */
+        body {
+            background-color: if(
+                    not style(--scheme: light): #222;
+            else: inherit
+        );
+            color: if(
+                    not style(--scheme: light): #eee;
+            else: inherit
+        );
+        }
+
+        .controls {
+            margin-top: 2rem;
+        }
+
+        button {
+            margin-right: .5rem;
+            padding: .5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>🎨 CSS if() con style()</h1>
+<p>Cambia los valores de <code>--scheme</code> y <code>--contrast</code> para ver cómo actúa.</p>
+
+<div class="controls">
+    <button onclick="document.documentElement.style.setProperty('--scheme','light')">Light</button>
+    <button onclick="document.documentElement.style.setProperty('--scheme','dark')">Dark</button>
+    <button onclick="document.documentElement.style.setProperty('--scheme','very-dark')">Very Dark</button>
+    <button onclick="document.documentElement.style.setProperty('--contrast','hi')">Contraste alto</button>
+    <button onclick="document.documentElement.style.setProperty('--contrast','normal')">Contraste normal</button>
+</div>
+</body>
+</html>
