@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="es" dir="ltr">
+<html dir="ltr" lang="es">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <title>dbj-webcomponents · Gallery</title>
-    <meta name="description" content="Colección de Web Components reutilizables: loaders, inputs, tablas y más."/>
-    <meta name="color-scheme" content="light dark"/>
-    <link rel="stylesheet" href="assets/styles.css"/>
+    <meta content="Colección de Web Components reutilizables: loaders, inputs, tablas y más." name="description"/>
+    <meta content="light dark" name="color-scheme"/>
+    <link href="assets/styles.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="container">
@@ -23,7 +23,7 @@
         </div>
         <div class="actions">
             <label class="toggle" title="Alternar tema">
-                <input id="theme-toggle" type="checkbox" checked/>
+                <input checked id="theme-toggle" type="checkbox"/>
                 <svg aria-hidden="true" viewBox="0 0 24 24">
                     <path d="M12 3a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1Zm0 14a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm8-5a1 1 0 0 1 1 1h0a1 1 0 1 1-2 0h0a1 1 0 0 1 1-1ZM4 12a1 1 0 0 1 1 1h0a1 1 0 1 1-2 0h0a1 1 0 0 1 1-1Zm14.95 6.536a1 1 0 0 1-1.415 1.415l-1.415-1.414a1 1 0 1 1 1.415-1.415l1.415 1.414ZM7.88 6.05a1 1 0 1 1-1.414-1.415L7.88 3.22A1 1 0 0 1 9.293 4.636L7.88 6.05Zm8.485-1.415a1 1 0 0 1 1.415 1.415L16.364 7.465A1 1 0 1 1 14.95 6.05L16.364 4.636ZM6.05 16.364a1 1 0 1 1 1.415 1.415L6.05 19.192a1 1 0 0 1-1.415-1.415l1.415-1.414Z"
                           fill="currentColor"/>
@@ -42,7 +42,7 @@
     </section>
 
     <!-- Loaders -->
-    <section id="loaders" class="anchor">
+    <section class="anchor" id="loaders">
         <h3>Loaders</h3>
         <p class="section-desc">Indicadores de carga minimalistas y performantes.</p>
         <div class="grid">
@@ -52,7 +52,7 @@
                     <span class="badge">CSS only</span>
                 </div>
                 <div class="preview">
-                    <div class="ring" aria-label="Cargando" role="status"></div>
+                    <div aria-label="Cargando" class="ring" role="status"></div>
                 </div>
                 <details>
                     <summary>Ver código</summary>
@@ -71,7 +71,7 @@
     </section>
 
     <!-- Inputs -->
-    <section id="inputs" class="anchor">
+    <section class="anchor" id="inputs">
         <h3>Inputs</h3>
         <p class="section-desc">Campos listos para UX moderna (focus, label flotante, accesibilidad).</p>
         <div class="grid">
@@ -82,8 +82,8 @@
                 </div>
                 <div class="preview">
                     <div class="field">
-                        <input id="demo-name" type="text" placeholder=" " aria-labelledby="lbl-name"/>
-                        <label id="lbl-name" for="demo-name">Tu nombre</label>
+                        <input aria-labelledby="lbl-name" id="demo-name" placeholder=" " type="text"/>
+                        <label for="demo-name" id="lbl-name">Tu nombre</label>
                     </div>
                 </div>
                 <details>
@@ -101,7 +101,7 @@
     </section>
 
     <!-- Tables -->
-    <section id="tables" class="anchor">
+    <section class="anchor" id="tables">
         <h3>Tables</h3>
         <p class="section-desc">Tablas con header pegajoso, zebra y hover.</p>
         <div class="grid">
@@ -112,4 +112,61 @@
                 </div>
                 <div class="preview">
                     <div class="table-wrap">
-                        <table class="dbj" role="table" aria-label="Tabla de ejemplo
+                        <table aria-label="Tabla de ejemplo" class="dbj" role="table">
+                            <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Rol</th>
+                                <th>Status</th>
+                                <th>Acciones</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Ana</td>
+                                <td>Frontend</td>
+                                <td>Activa</td>
+                                <td>Ver</td>
+                            </tr>
+                            <tr>
+                                <td>Bruno</td>
+                                <td>Backend</td>
+                                <td>Pendiente</td>
+                                <td>Editar</td>
+                            </tr>
+                            <tr>
+                                <td>Carla</td>
+                                <td>UX</td>
+                                <td>Activa</td>
+                                <td>Ver</td>
+                            </tr>
+                            <tr>
+                                <td>David</td>
+                                <td>DevOps</td>
+                                <td>Inactivo</td>
+                                <td>—</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <details>
+                    <summary>Ver código</summary>
+                    <pre><code>&lt;div class="table-wrap"&gt;
+  &lt;table class="dbj"&gt;...&lt;/table&gt;
+&lt;/div&gt;
+
+/* CSS base en el &lt;head&gt; (ver .dbj y thead sticky) */</code></pre>
+                </details>
+                <div class="meta">Usa &lt;div class="table-wrap"&gt; para scroll horizontal en móviles.</div>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        Hecho con ❤️ por dbj · <a href="#">MIT</a> · v0.1.0
+    </footer>
+</div>
+</body>
+</html>
+
