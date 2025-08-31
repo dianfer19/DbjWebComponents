@@ -17,13 +17,15 @@
 </head>
 <body>
 <!-- 1) Texto por atributo -->
-<dbj-btn01 id="btn-generar" label="Generar"></dbj-btn01>
+<dbj-btn01 id="btn-generar" label="Generar">
+    <dbj-icon color="white" name="sparkle" size="22" slot="icon"></dbj-icon>
+</dbj-btn01>
 
-<!--&lt;!&ndash; 2) Texto por slot + variant &ndash;&gt;-->
-<!--<dbj-btn01 variant="primary">Publicar</dbj-btn01>-->
+<!-- 2) Texto por slot + variant -->
+<dbj-btn01 variant="primary">Publicar</dbj-btn01>
 
-<!--&lt;!&ndash; 3) Colores por variables (scoped) &ndash;&gt;-->
-<!--<dbj-btn01 class="custom-green">Aprobar</dbj-btn01>-->
+<!-- 3) Colores por variables (scoped) -->
+<dbj-btn01 class="custom-green">Aprobar</dbj-btn01>
 
 <!-- 4) Icono personalizado por slot y texto por atributo -->
 <dbj-btn01 id="btn-descargar" label="Descargar">
